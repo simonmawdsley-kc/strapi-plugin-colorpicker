@@ -20,14 +20,9 @@ import { ColorContainer, Color, PopOver } from "../styled";
 import { useFirstRender } from "../../hooks/useFirstRender";
 
 const defaultColor = {
-  hex: "#000000ff",
-  rgb: {
-    r: 0,
-    g: 0,
-    b: 0,
-    a: 1,
-  },
-  css: "rgba(0, 0, 0, 1)",
+  hex: "",
+  rgb: {},
+  css: "",
 };
 
 const ColorPicker = ({
@@ -44,7 +39,7 @@ const ColorPicker = ({
     props.value ? JSON.parse(props.value) : defaultColor
   );
   const [hex, setHex] = useState(() =>
-    props.value ? JSON.parse(props.value).hex : "#000000"
+    props.value ? JSON.parse(props.value).hex : ""
   );
   const popoverRef = useRef(null);
   const firstRender = useFirstRender();
